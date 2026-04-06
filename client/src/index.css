@@ -1,0 +1,381 @@
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+/* #root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+} */
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+}
+
+body {
+  min-width: 1200px;
+  background: #f5f5f5;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+.course-table .ant-table {
+  border-radius: 8px;
+}
+
+.course-table .ant-table-thead > tr > th {
+  border-bottom: 2px solid #222 !important;
+  font-weight: 700;
+  background: #fff !important;
+  font-size: 16px;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+}
+
+.course-table .ant-table-tbody > tr > td {
+  border-bottom: 1px dashed #d9d9d9 !important;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+  vertical-align: top;
+}
+
+.course-table .ant-table-tbody > tr:last-child > td {
+  border-bottom: none !important;
+}
+
+.course-table .ant-table-container {
+  border-top: 2px solid #222;
+}
+
+.summary-markdown {
+  font-size: 16px;
+  color: #333;
+}
+
+/* 一级标题 */
+.summary-markdown h1 {
+  font-size: 40px;
+  font-weight: 800;
+  color: #ef4444;
+  margin-bottom: 24px;
+}
+
+/* 二级标题 */
+.summary-markdown h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 24px 0 12px;
+}
+
+/* 三级标题 */
+.summary-markdown h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 20px 0 10px;
+}
+
+/* 段落 */
+.summary-markdown p {
+  line-height: 1.8;
+  margin: 10px 0;
+}
+
+/* 列表 */
+.summary-markdown ul {
+  padding-left: 22px;
+  margin: 10px 0;
+}
+
+.summary-markdown li {
+  margin: 6px 0;
+}
+
+/* 代码块 */
+.summary-markdown pre {
+  margin: 16px 0;
+  border-radius: 10px;
+}
+
+/* 行内代码 */
+.summary-markdown code {
+  background: #f5f5f5;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* 表格 */
+.summary-markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+.summary-markdown th,
+.summary-markdown td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.summary-markdown th {
+  background: #fafafa;
+}
+
+/* 图片 */
+.summary-markdown img {
+  max-width: 100%;
+  margin: 16px 0;
+  border-radius: 8px;
+}
+
+.ant-menu-item {
+  height: 64px !important;
+  line-height: 64px !important;
+  border-radius: 14px !important;
+  margin-bottom: 12px !important;
+  font-size: 18px !important;
+  font-weight: 600;
+}
+
+.ant-menu-item .ant-menu-title-content {
+  margin-left: 8px;
+}
+
+.ant-menu-item-selected {
+  background: #dbeafe !important;
+  border: 3px solid #60a5fa;
+  color: #111 !important;
+}
+
+.ant-menu-item-selected::after {
+  display: none !important;
+}
+
+
+.student-table .ant-table {
+  border-radius: 8px;
+}
+
+.student-table .ant-table-thead > tr > th {
+  border-bottom: 2px solid #222 !important;
+  font-weight: 700;
+  background: #fff !important;
+  font-size: 16px;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+}
+
+.student-table .ant-table-tbody > tr > td {
+  border-bottom: 1px dashed #d9d9d9 !important;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+  vertical-align: top;
+}
+
+.student-table .ant-table-tbody > tr:last-child > td {
+  border-bottom: none !important;
+}
+
+.student-table .ant-table-container {
+  border-top: 2px solid #222;
+}
+/* 整体居中 */
+.login-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* 背景斜纹（保留，目标图背景一致） */
+  background: repeating-linear-gradient(
+    45deg,
+    #f5f5f5,
+    #f5f5f5 10px,
+    #f0f0f0 10px,
+    #f0f0f0 20px
+  );
+}
+
+/* 卡片：调整边框、阴影、圆角 */
+.login-card {
+  width: 380px;
+  padding: 40px 32px;
+  background: #fff;
+  border-radius: 8px; /* 目标图圆角更小 */
+  border: 3px solid #333; /* 加粗边框 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* 弱化阴影 */
+  text-align: center;
+}
+
+/* 头像：完全对齐目标样式 */
+.avatar {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: #e6f0ff; /* 保留浅蓝底 */
+  border: 3px solid #333; /* 加黑色外框 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #553c9a; /* 图标改为深紫色（目标图效果） */
+}
+
+/* 标题 */
+.title {
+  font-size: 28px; /* 目标图标题更大 */
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #111;
+}
+
+/* 输入框：调整边框、圆角、高度 */
+.ant-input-affix-wrapper {
+  border-radius: 6px !important; /* 目标图圆角更小 */
+  height: 48px;
+  border: 2px solid #999 !important; /* 加粗边框 */
+}
+
+/* 输入框聚焦时样式（可选，增强体验） */
+.ant-input-affix-wrapper-focused {
+  border-color: #333 !important;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* 用户名图标：紫色 */
+.user-icon {
+  color: #553c9a !important;
+  font-size: 18px;
+}
+
+/* 密码图标：橙色 */
+.lock-icon {
+  color: #f59e0b !important;
+  font-size: 18px;
+}
+
+/* 登录按钮：完全对齐目标样式 */
+.login-btn {
+  height: 48px;
+  border-radius: 6px;
+  font-size: 20px;
+  font-weight: 600;
+  background: #cce7ff !important; /* 亮浅蓝色（目标图效果） */
+  border: 3px solid #333 !important; /* 黑色粗边框 */
+  color: #000 !important;
+}
+
+.login-btn:hover {
+  background: #b8dfff !important;
+  color: #000 !important;
+}
+
+/* 测试账号 */
+.test-account {
+  margin-top: 20px;
+  color: #999;
+  font-size: 16px;
+}
